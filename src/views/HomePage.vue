@@ -3,6 +3,7 @@
     <h1>你好！</h1>
     <h2>欢迎来到我的博客</h2>
     <p>这是一个部署在GitHub Pages上的Vue3静态页面</p>
+    <p class="creator">代码创作者：AI Assistant</p>
   </div>
 </template>
 
@@ -33,5 +34,11 @@ h2 {
 p {
   font-size: 1.2em;
   color: #666;
+}
+
+.creator {
+  font-size: 0.8em;
+  color: #999;
+  margin-top: 40px;
 }
 </style>
