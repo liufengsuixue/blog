@@ -1,21 +1,42 @@
 <template>
   <div class="home-page">
-    <h1>你好！</h1>
-    <h2>欢迎来到我的博客</h2>
-    <p>这是一个部署在GitHub Pages上的Vue3静态页面</p>
-    <p class="creator">代码创作者：AI Assistant</p>
+    <SplashScreen v-if="showSplash" @enter-home="enterHome" />
+    <div v-else class="content">
+      <h1>你好！</h1>
+      <h2>欢迎来到我的博客</h2>
+      <p>这是一个部署在GitHub Pages上的Vue3静态页面</p>
+      <p class="creator">代码创作者：AI Assistant</p>
+    </div>
   </div>
 </template>
 
 <script>
+import SplashScreen from './SplashScreen.vue'
+
 export default {
-  name: 'HomePage'
+  name: 'HomePage',
+  components: {
+    SplashScreen
+  },
+  data() {
+    return {
+      showSplash: true
+    }
+  },
+  methods: {
+    enterHome() {
+      this.showSplash = false
+    }
+  }
 }
 </script>
 
 <style scoped>
 .home-page {
   text-align: center;
+}
+
+.content {
   margin-top: 60px;
 }
 
