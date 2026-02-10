@@ -5,6 +5,9 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   plugins: [vue()],
   base: '/blog/',
+  optimizeDeps: {
+    include: ['vue']
+  },
   build: {
     outDir: 'blog',
     assetsDir: 'assets'
